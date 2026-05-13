@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <link rel="manifest" href="./manifest.json">
+    <meta name="theme-color" content="#007bff">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tela de Login</title>
@@ -62,7 +64,7 @@
             padding: 12px;
             border: none;
             border-radius: 8px;
-            background-color: #4facfe;
+            background-color: #000000;
             color: white;
             font-size: 16px;
             cursor: pointer;
@@ -70,7 +72,7 @@
         }
 
         button:hover{
-            background-color: #00c6fb;
+            background-color: #2f3109;
         }
 
         .cadastro{
@@ -110,6 +112,16 @@
             </div>
         </form>
     </div>
+
+    <script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js')
+        .then(reg => console.log('Service Worker registrado!', reg))
+        .catch(err => console.log('Falha ao registrar:', err));
+    });
+  }
+</script>
 
 </body>
 </html>
